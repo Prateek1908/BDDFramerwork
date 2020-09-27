@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/bee7a4abdc590e21eec8618a90c81ff4d16e500a/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Cucumber Framework</title>
+
+	<style type='text/css'>
+			
+      
+        
+      
+    
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Cucumber Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sep 27, 2020 10:45:35 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.1.1</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>2</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='75%'>6</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>3</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>6</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='65.957%'><span class='strong'>31</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='12.766%'>6</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='21.277%'>10</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Order Confirmation</span>
+						<span class='test-time'>Sep 27, 2020 10:45:35 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 1m 2s+18ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify order confirmation page and order successful</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify address and proceed</span>
+				<div class='pre'><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/OrderConfirmation.feature:7)
+</textarea></div>
+			
+		</li>
+		<li test-id='8' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify shipping details and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='9' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify payment details page and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='10' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify order summary page and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='11' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify order confirmation page details and verify success message</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Verify_order_confirmation_page_and_order_successful.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Order Summary</span>
+						<span class='test-time'>Sep 27, 2020 10:46:39 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='13' status='fail'>
+	<span class='duration right label'>0h 0m 50s+9ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify order Summary page and proceed</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='14' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='15' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify address and proceed</span>
+				<div class='pre'><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/OrderSummary.feature:7)
+</textarea></div>
+			
+		</li>
+		<li test-id='19' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify shipping details and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='20' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify payment details page and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='21' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify order summary page and proceed</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Verify_order_Summary_page_and_proceed.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>Payment</span>
+						<span class='test-time'>Sep 27, 2020 10:47:32 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='23' status='fail'>
+	<span class='duration right label'>0h 0m 55s+191ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify payment page and proceed</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='24' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify address and proceed</span>
+				<div class='pre'><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/Payment.feature:7)
+</textarea></div>
+			
+		</li>
+		<li test-id='29' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify shipping details and proceed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='30' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify payment details page and proceed</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Verify_payment_page_and_proceed.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>Select and checkout a dress</span>
+						<span class='test-time'>Sep 27, 2020 10:48:29 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='32' status='pass'>
+	<span class='duration right label'>0h 0m 47s+501ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Select summer dress and proceed to checkout</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='33' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='34' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='35' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>Shipping and proceed</span>
+						<span class='test-time'>Sep 27, 2020 10:49:18 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='37' status='fail'>
+	<span class='duration right label'>0h 0m 50s+108ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify shipping and proceed</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='38' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='39' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='40' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='41' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='42' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify address and proceed</span>
+				<div class='pre'><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/Shipping.feature:7)
+</textarea></div>
+			
+		</li>
+		<li test-id='43' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify shipping details and proceed</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Verify_shipping_and_proceed.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>Shopping Cart summary page verification</span>
+						<span class='test-time'>Sep 27, 2020 10:50:09 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='45' status='pass'>
+	<span class='duration right label'>0h 0m 49s+417ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify values on shopping cart summary page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='46' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='47' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='48' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='49' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>Shopping cart on an e-commerce website</span>
+						<span class='test-time'>Sep 27, 2020 10:51:00 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='51' status='fail'>
+	<span class='duration right label'>0h 0m 34s+765ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Sign im and sign out</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='52' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='53' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='54' class='node then fail' status='fail'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I sign out</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Sign_im_and_sign_out.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Sign out"}
+  (Session info: chrome=85.0.4183.121)
+  (Driver info: chromedriver=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}),platform=Windows NT 10.0.19041 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 78 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Neetu_Laptop', ip: '192.168.1.17', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51558}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}), userDataDir=C:\Users\bansa\AppData\Local\Temp\scoped_dir10084_92880715}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=85.0.4183.121, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 4660639fc02e14ff79e1af863d6a27ef
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy17.click(Unknown Source)
+	at modules.SignoutAction.Execute(SignoutAction.java:10)
+	at step_definitions.SigninSignoutContactUsSteps.i_sign_out(SigninSignoutContactUsSteps.java:51)
+	at ?.Then I sign out(features/SigninSignoutContactUs.feature:6)
+</pre></div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='55' status='pass'>
+	<span class='duration right label'>0h 0m 21s+443ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Contact Us Action</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='56' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='57' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I perform contact us actions</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='58'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Address</span>
+						<span class='test-time'>Sep 27, 2020 10:51:59 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='59' status='fail'>
+	<span class='duration right label'>0h 0m 49s+335ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify address in the workflow and proceed</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='60' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I open automationpractice website</span>
+				<div class='pre'>Navigated browser and opened respective URL</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='61' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I sign in</span>
+				<div class='pre'>Signed in is successful</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='62' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I select a dress and proceed to checkout</span>
+				<div class='pre'>Header page called</div>
+				<div class='pre'>Women page called</div>
+				<div class='pre'>Women Dress page called</div>
+				<div class='pre'>Catalogue page called</div>
+				<div class='pre'>Summer Dress page called</div>
+				<div class='pre'>cart Popup page called</div>
+				<div class='pre'>Execution page called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='63' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I verify details on shoppingCart summary page</span>
+				<div class='pre'>Details of shopping page is called</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='64' class='node then fail' status='fail'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I verify address and proceed</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\bansa\Downloads\BDD_Cucumber_Excel_Framework\target\cucumber-reports\screenshots\Verify_address_in_the_workflow_and_proceed.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.Then I verify address and proceed(features/VerifyAddress.feature:7)
+</textarea></div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>5</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:46:37 AM</td>
+                                                        <td class='linked' test-id='7'>Order Confirmation.Verify order confirmation page and order successful.And I verify address and proceed</td>
+                                                        <td><pre><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/OrderConfirmation.feature:7)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:47:29 AM</td>
+                                                        <td class='linked' test-id='18'>Order Summary.Verify order Summary page and proceed.And I verify address and proceed</td>
+                                                        <td><pre><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/OrderSummary.feature:7)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:48:27 AM</td>
+                                                        <td class='linked' test-id='28'>Payment.Verify payment page and proceed.And I verify address and proceed</td>
+                                                        <td><pre><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/Payment.feature:7)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:50:08 AM</td>
+                                                        <td class='linked' test-id='42'>Shipping and proceed.Verify shipping and proceed.And I verify address and proceed</td>
+                                                        <td><pre><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.And I verify address and proceed(features/Shipping.feature:7)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:52:49 AM</td>
+                                                        <td class='linked' test-id='64'>Verify Address.Verify address in the workflow and proceed.Then I verify address and proceed</td>
+                                                        <td><pre><textarea>java.lang.AssertionError: expected:<ADDRESSES> but was:<AUTHENTICATION>
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+	at modules.VerifyAddressProceed.Execute(VerifyAddressProceed.java:13)
+	at step_definitions.AddressSteps.i_verify_address_and_proceed(AddressSteps.java:29)
+	at ?.Then I verify address and proceed(features/VerifyAddress.feature:7)
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Sep 27, 2020 10:51:35 AM</td>
+                                                        <td class='linked' test-id='54'>Shopping cart on an e-commerce website.Sign im and sign out.Then I sign out</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Sign out"}
+  (Session info: chrome=85.0.4183.121)
+  (Driver info: chromedriver=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}),platform=Windows NT 10.0.19041 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 78 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Neetu_Laptop', ip: '192.168.1.17', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51558}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}), userDataDir=C:\Users\bansa\AppData\Local\Temp\scoped_dir10084_92880715}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=85.0.4183.121, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 4660639fc02e14ff79e1af863d6a27ef
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy17.click(Unknown Source)
+	at modules.SignoutAction.Execute(SignoutAction.java:10)
+	at step_definitions.SigninSignoutContactUsSteps.i_sign_out(SigninSignoutContactUsSteps.java:51)
+	at ?.Then I sign out(features/SigninSignoutContactUs.feature:6)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>8</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>47</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sep 27, 2020 10:45:35 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sep 27, 2020 10:52:51 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>436,223ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>User Name</td>
+								<td>bansa</td>
+							</tr>
+							<tr>
+								<td>Time Zone</td>
+								<td>Asia/Calcutta</td>
+							</tr>
+							<tr>
+								<td>Machine</td>
+								<td>Windows 1064 Bit</td>
+							</tr>
+							<tr>
+								<td>Selenium</td>
+								<td>2.44.0</td>
+							</tr>
+							<tr>
+								<td>Maven</td>
+								<td>3.3.7</td>
+							</tr>
+							<tr>
+								<td>Java Version</td>
+								<td>11.0.1</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 6,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 6,
+				
+				passChild: 3,
+				failChild: 6,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 6,
+				
+				passGrandChild: 31,
+				failGrandChild: 6,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 10,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 16,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+      
+        $(document).ready(function() {
+        
+        });
+      
+    
+ 		</script>
+	</body>
+	
+</html>
